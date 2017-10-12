@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace DroneLander
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Skip)]
     public partial class ViewActivityPage : ContentPage
     {
         public ViewActivityPage()
