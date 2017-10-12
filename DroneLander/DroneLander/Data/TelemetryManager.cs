@@ -14,9 +14,12 @@ namespace DroneLander
         static TelemetryManager defaultInstance = new TelemetryManager();
         MobileServiceClient client;
 
+        IMobileServiceTable<ActivityItem> activitiesTable;
+
         private TelemetryManager()
         {
             this.client = new MobileServiceClient(Common.CoreConstants.MobileServiceConstants.AppUrl);
+            this.activitiesTable = client.GetTable<ActivityItem>();
         }
 
         public static TelemetryManager DefaultManager
@@ -34,6 +37,30 @@ namespace DroneLander
         public MobileServiceClient CurrentClient
         {
             get { return client; }
+        }
+
+
+        public async Task AddActivityAsync(ActivityItem item)
+        {
+            try
+            {
+                await activitiesTable.InsertAsync(item);
+            }
+            catch { }
+        }
+
+        public async Task<List<ActivityItem>> GetAllActivityAync()
+        {
+            List<ActivityItem> activity = new List<ActivityItem>();
+
+            try
+            {
+                IEnumerable<ActivityItem> items = await activitiesTable.ToEnumerableAsync();
+                activity = new List<ActivityItem>(items.OrderByDescending(o => o.ActivityDate));
+            }
+            catch { }
+
+            return activity;
         }
     }
 }
