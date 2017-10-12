@@ -167,7 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DroneLander\DroneLander.csproj">
-      <Project>{251c49dc-817a-43e5-af61-99c39693eeb4}</Project>
+      <Project>{dd1c3b89-66b0-4cf1-9f8c-e011e9062b1f}</Project>
       <Name>DroneLander</Name>
     </ProjectReference>
   </ItemGroup>

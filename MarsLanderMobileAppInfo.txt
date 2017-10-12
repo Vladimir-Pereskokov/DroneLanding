@@ -1,0 +1,5 @@
+
+Drone Lander on Azure:
+
+Application ID: 	9f7d3840-2746-4c74-9301-0703e36c89ba
+Application secret: 	gDNmkwZW29qiiG9UU82EeMU

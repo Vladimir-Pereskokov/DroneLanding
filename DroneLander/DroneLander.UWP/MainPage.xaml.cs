@@ -12,16 +12,57 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.WindowsAzure.MobileServices;
+using System.Threading.Tasks;
+using DroneLander.Services;
+
 
 namespace DroneLander.UWP
 {
-    public sealed partial class MainPage
+    public sealed partial class MainPage :IAuthenticationService
+
     {
         public MainPage()
         {
             this.InitializeComponent();
-
+            DroneLander.App.InitializeAuthentication((IAuthenticationService)this);
             LoadApplication(new DroneLander.App());
         }
+
+
+        MobileServiceUser user = null;
+
+        public async Task<bool> SignInAsync()
+        {
+            bool successful = false;
+
+            try
+            {
+                /*
+                user = await TelemetryManager.DefaultManager.CurrentClient.LoginAsync(MobileServiceAuthenticationProvider.MicrosoftAccount);
+                successful = user != null;
+                */
+            }
+            catch { }
+
+            return successful;
+        }
+
+        public async Task<bool> SignOutAsync()
+        {
+            bool isSuccessful = false;
+
+            try
+            {
+                /*
+                await TelemetryManager.DefaultManager.CurrentClient.LogoutAsync();
+                isSuccessful = true;
+                */
+            }
+            catch { }
+
+            return isSuccessful;
+        }
+
     }
 }

@@ -23,6 +23,16 @@ namespace DroneLander
             MainPage = new NavigationPage(new DroneLander.MainPage());
         }
 
+        public static Services.IAuthenticationService Authenticator { get; private set; }
+
+        public static void InitializeAuthentication(Services.IAuthenticationService authenticator)
+        {
+            Authenticator = authenticator;
+        }
+
+
+
+
         protected override void OnStart()
         {
             // Handle when your app starts

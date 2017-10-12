@@ -22,5 +22,13 @@ namespace DroneLander.Common
             public const string AndroidAppId = "DENVEREVENT";
             public const string iOSAppId = "";
         }
+
+
+        public static class MobileServiceConstants
+        {
+            public const string AppUrl = "https://dronelandermobilevlad.azurewebsites.net";
+        }
+
+
     }
 }
