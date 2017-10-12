@@ -43,6 +43,7 @@
     <Compile Include="Common\ObservableBase.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Data\ActivityItem.cs" />
+    <Compile Include="Data\TelemetryItem.cs" />
     <Compile Include="Data\TelemetryManager.cs" />
     <Compile Include="Effects\DigitalFontEffect.cs" />
     <Compile Include="Helpers\ActivityHelper.cs" />

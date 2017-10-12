@@ -29,6 +29,12 @@ namespace DroneLander.Common
             public const string AppUrl = "https://dronelandermobilevlad.azurewebsites.net";
         }
 
+        public static class TelemetryConstants
+        {
+            public const string DisplayName = "Vladimir' drone";
+            public const string Tagline = "Success. We did it!";
+        }
+
 
     }
 }
